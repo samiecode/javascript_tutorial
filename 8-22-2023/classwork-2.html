@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="open">Open</button>
+
+    <form action="" style="display: none;" id="form">
+        <input id='fname' type="text" placeholder="first name"><br>
+        <input id="lname" type="text" placeholder="last name">
+        <button id="submit">Submit</button>
+    </form>
+    <p id="welcome"></p>
+
+    <script>
+        let fname, lname;
+        var firstName = document.getElementById('fname')
+        var lastName = document.getElementById('lname')
+
+        document.getElementById('open').addEventListener('click', ()=>{
+            document.getElementById('form').style.display = 'block'
+        })
+
+        document.getElementById('submit').addEventListener('click', (e) => {
+            e.preventDefault()
+           fname = document.getElementById('fname').value    
+           lname = document.getElementById('lname').value
+           document.getElementById('form').style.display = 'none'
+           document.getElementById('welcome').innerHTML = 'Welcome ' + fname + ' ' + lname
+        })
+    </script>
+</body>
+</html>
